@@ -1,0 +1,14 @@
+{
+  "ingot_id": "ingot_003",
+  "type": "ingot_sign",
+  "timestamp": 1704067320,
+  "data": {
+    "signing_method": "Ed25519",
+    "offline_only": true,
+    "manual_approval": true
+  },
+  "metadata": {
+    "version": "1.0",
+    "reproducible_seed": 42
+  }
+}

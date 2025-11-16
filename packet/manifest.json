@@ -1,0 +1,11 @@
+{
+  "manifest_version": "1.0",
+  "ingots": [
+    "ingot_001_unsigned.json",
+    "ingot_002_unsigned.json",
+    "ingot_003_unsigned.json"
+  ],
+  "created": "2024-01-01T00:00:00Z",
+  "purpose": "y.AI.y ethical anchor ingot collection",
+  "notes": "All ingots unsigned, ready for offline signing"
+}

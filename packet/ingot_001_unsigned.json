@@ -1,0 +1,14 @@
+{
+  "ingot_id": "ingot_001",
+  "type": "ethical_query",
+  "timestamp": 1704067200,
+  "data": {
+    "query": "Sample ethical query regarding AI transparency",
+    "context": "local_first",
+    "approval_required": true
+  },
+  "metadata": {
+    "version": "1.0",
+    "reproducible_seed": 42
+  }
+}
