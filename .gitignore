@@ -47,6 +47,7 @@ htmlcov/
 *.pem
 private_keys/
 secrets/
+demo_keys/
 
 # Logs
 *.log
@@ -58,3 +59,7 @@ Thumbs.db
 # Temporary files
 tmp/
 *.tmp
+
+# Demo/test output
+demo_output/
+results/
