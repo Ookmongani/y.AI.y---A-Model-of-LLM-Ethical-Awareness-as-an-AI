@@ -1,0 +1,28 @@
+{
+  "ingot_type": "policy_configuration",
+  "version": "0.1.0",
+  "description": "Example policy configuration ingot (unsigned)",
+  "timestamp": "2024-01-01T00:00:00Z",
+  "data": {
+    "rules": [
+      {
+        "name": "data_minimization",
+        "enabled": true,
+        "risk_level": "medium"
+      },
+      {
+        "name": "consent_required",
+        "enabled": true,
+        "risk_level": "high"
+      }
+    ],
+    "defaults": {
+      "require_approval": true,
+      "offline_mode": true
+    }
+  },
+  "metadata": {
+    "author": "system",
+    "purpose": "example_configuration"
+  }
+}

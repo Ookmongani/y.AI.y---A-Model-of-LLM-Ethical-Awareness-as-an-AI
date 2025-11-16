@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, copilot/** ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run tests with pytest
+      run: |
+        pytest yaiy/tests/ -v --cov=yaiy --cov-report=term-missing
+    
+    - name: Test Ed25519 signer CLI
+      run: |
+        python -m yaiy.signer.cli generate --output-dir /tmp/test_keys
+        echo '{"test": "data"}' | python -m yaiy.signer.cli sign --private-key /tmp/test_keys/private.key
+    
+    - name: Test UCF simulation
+      run: |
+        python -m yaiy.simulation.ucf_sim --iterations 5 --seed 42 --output /tmp/ucf_test.json
+    
+    - name: Test plotting tools
+      run: |
+        python -m yaiy.plotting.tools /tmp/ucf_test.json --csv /tmp/ucf_test.csv
+    
+    - name: Test FastAPI mediator
+      run: |
+        pip install httpx
+        python -c "from yaiy.mediator import app; import httpx; client = httpx.Client(app=app); resp = client.get('/health'); print(resp.json()); assert resp.status_code == 200"
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    
+    - name: Install linting tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+    
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 yaiy --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings
+        flake8 yaiy --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics

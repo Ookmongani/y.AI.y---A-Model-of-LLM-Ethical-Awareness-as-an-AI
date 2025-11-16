@@ -1,0 +1,29 @@
+{
+  "ingot_type": "model_metadata",
+  "version": "0.1.0",
+  "description": "Example model metadata ingot (unsigned)",
+  "timestamp": "2024-01-01T00:00:00Z",
+  "data": {
+    "model_info": {
+      "name": "example_ethical_llm",
+      "architecture": "transformer",
+      "parameters": "7B",
+      "training_date": "2024-01-01"
+    },
+    "verification": {
+      "weights_hash": "sha256:example_hash_placeholder",
+      "config_hash": "sha256:example_config_hash",
+      "verified": false
+    },
+    "ethical_alignment": {
+      "trained_with_ethics": true,
+      "alignment_score": 0.85,
+      "safety_tested": true
+    }
+  },
+  "metadata": {
+    "author": "system",
+    "purpose": "example_model_metadata",
+    "note": "This is an example. Real ingots must be signed."
+  }
+}
