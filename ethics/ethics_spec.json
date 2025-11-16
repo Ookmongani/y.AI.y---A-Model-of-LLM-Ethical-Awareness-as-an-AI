@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "title": "y.AI.y Ethical Specification",
+  "description": "Ethical guidelines and policy rules for AI awareness model",
+  "principles": [
+    {
+      "id": "transparency",
+      "name": "Transparency",
+      "description": "All actions and decisions should be transparent and auditable"
+    },
+    {
+      "id": "local_first",
+      "name": "Local-First Privacy",
+      "description": "No external network calls without explicit approval"
+    },
+    {
+      "id": "offline_keys",
+      "name": "Offline Key Management",
+      "description": "Private keys must be kept offline and secure"
+    },
+    {
+      "id": "reproducibility",
+      "name": "Reproducibility",
+      "description": "All operations use reproducible seeds for deterministic results"
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule_001",
+      "type": "no_network",
+      "description": "Network access is forbidden by default",
+      "severity": "critical"
+    },
+    {
+      "id": "rule_002",
+      "type": "require_approval",
+      "description": "Manual approval required for forwarding",
+      "severity": "high"
+    },
+    {
+      "id": "rule_003",
+      "type": "require_field",
+      "field": "timestamp",
+      "description": "All ingots must have timestamp",
+      "severity": "medium"
+    }
+  ],
+  "safe_defaults": {
+    "network_calls": false,
+    "manual_approval_required": true,
+    "private_key_storage": "offline",
+    "reproducible_seeds": true,
+    "canonical_json": true
+  }
+}

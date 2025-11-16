@@ -1,0 +1,20 @@
+{
+  "test_vectors": [
+    {
+      "name": "canonical_json_test",
+      "input": {"b": 2, "a": 1},
+      "expected_output": "{\"a\":1,\"b\":2}"
+    },
+    {
+      "name": "log10_suppression_test",
+      "input": 100.0,
+      "expected_output": 2.004
+    },
+    {
+      "name": "policy_no_network",
+      "input": {"network_access": true, "approved": true},
+      "expected_violation": true
+    }
+  ],
+  "version": "1.0"
+}

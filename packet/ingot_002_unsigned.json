@@ -1,0 +1,14 @@
+{
+  "ingot_id": "ingot_002",
+  "type": "policy_check",
+  "timestamp": 1704067260,
+  "data": {
+    "policy": "no_network_access",
+    "enforcement": "strict",
+    "approval_status": "pending"
+  },
+  "metadata": {
+    "version": "1.0",
+    "reproducible_seed": 42
+  }
+}
