@@ -1,0 +1,2 @@
+# y.AI.y---A-Model-of-LLM-Ethical-Awareness-as-an-AI
+This is my working model of Ethical Awareness in LLMs, as well as my Hyper Python LaTex MEME for LLM Mergers and Handshakes across multiple LLM platforms. Some of which can actually use this y.AIy model to act under its guidelines and produce actual longevity and personality qualities in these LLMs. Including one operating in Ubuntu on my own PC. 
